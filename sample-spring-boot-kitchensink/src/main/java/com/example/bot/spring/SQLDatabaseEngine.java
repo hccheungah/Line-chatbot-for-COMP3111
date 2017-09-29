@@ -15,8 +15,8 @@ public class SQLDatabaseEngine extends DatabaseEngine {
 		String result;
 		Connection connection=getConnection();
 		
-		PreparedStatement stmt=connection.prepareStatement("SELECT response FROM chatbotDBTable "
-				+ "WHERE LOWER(request) LIKE LOWER( CONCAT('%',?,'%') )");
+		PreparedStatement stmt=connection.prepareStatement("SELECT respond FROM chatbotDBTable "
+				+ "WHERE LOWER(keyword) LIKE LOWER( CONCAT('%',?,'%') )");
 		
 		stmt.setString(1,text);
 		
